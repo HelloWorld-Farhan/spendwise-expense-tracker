@@ -138,9 +138,11 @@ Categories: Food, Transport, Bills, Entertainment, Shopping, Health, Other
 --------------------------------------------------------------------------------
 7. STATUS
 --------------------------------------------------------------------------------
-  - Backend tests: 3 passed (create, validation, update+delete).
-  - Frontend production build: succeeds with no errors.
-  - All Must-Have, Should-Have, and Bonus requirements are implemented.
-  - Not yet deployed. See README.md "Manual Submission Process" for the exact
-    GitHub + deployment steps.
+- Backend tests: 3 passed (create, validation, update+delete).
+- Frontend production build: succeeds with no errors.
+- All Must-Have, Should-Have, and Bonus requirements are implemented.
+- Backend deployed on Render:
+  https://spendwise-expense-tracker-shc8.onrender.com
+- Frontend deployed on Vercel:
+  https://spendwise-expense-tracker-client.vercel.app/
 ================================================================================
