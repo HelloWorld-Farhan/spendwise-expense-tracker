@@ -6,10 +6,8 @@ SpendWise is my solution for **Exercise 2: Mini Expense Tracker** from the Studi
 
 ## Live Demo Links
 
-Not deployed yet. After deployment, add:
-
-- Frontend: `https://your-frontend-url`
-- Backend API: `https://your-backend-url`
+- Frontend: https://spendwise-expense-tracker-client.vercel.app/
+- Backend API: https://spendwise-expense-tracker-shc8.onrender.com
 
 ## Tech Stack
 
@@ -69,7 +67,15 @@ Response:
 
 ```json
 {
-  "data": ["Food", "Transport", "Bills", "Entertainment", "Shopping", "Health", "Other"]
+  "data": [
+    "Food",
+    "Transport",
+    "Bills",
+    "Entertainment",
+    "Shopping",
+    "Health",
+    "Other"
+  ]
 }
 ```
 
@@ -340,7 +346,7 @@ Response:
 - Add authentication if multiple users need separate data.
 - Add pagination if the expense list grows very large.
 - Add frontend component tests for the main user flows.
-- Deploy the frontend on Vercel or Netlify and the backend on Render or Railway.
+- Improve analytics with monthly and yearly spending trends.
 
 ## Manual Submission Process
 
