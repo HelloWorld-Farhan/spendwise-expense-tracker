@@ -1,0 +1,146 @@
+================================================================================
+SPENDWISE - MINI EXPENSE TRACKER
+Studio Graphene | Full Stack Developer Assessment (Node.js + React)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. WHICH EXERCISE THIS IS
+--------------------------------------------------------------------------------
+The assessment PDF offered three take-home exercises and asked the candidate to
+pick ONE:
+
+  - Exercise 1: Personal Task Manager (a to-do list)
+  - Exercise 2: Mini Expense Tracker   <-- THIS PROJECT
+  - Exercise 3: GitHub Repo Explorer
+
+This repository implements EXERCISE 2: MINI EXPENSE TRACKER.
+
+Brief: Build an expense tracker that lets a single user (no authentication) log
+their daily spending across categories and see a summary of where their money
+is going. The project is a monorepo with a React frontend (/client) and a
+Node.js + Express backend (/server).
+
+--------------------------------------------------------------------------------
+2. REQUIREMENTS FROM THE BRIEF vs WHAT IS IMPLEMENTED
+--------------------------------------------------------------------------------
+
+MUST HAVE (all implemented)
+  [DONE] Add an expense with amount (positive number), category, date, and an
+         optional note.
+  [DONE] View all expenses in a table sorted by date (newest first).
+  [DONE] Edit and delete existing expenses (delete asks for confirmation).
+  [DONE] Filter expenses by category and by date range
+         (this month, last month, custom range, all dates).
+  [DONE] Summary panel: total spent this month, total per category, and the
+         highest single expense (plus a visible total and record count).
+
+SHOULD HAVE (all implemented)
+  [DONE] A chart of expenses by category (bar chart via Recharts).
+  [DONE] Consistent currency formatting (Indian Rupee, e.g. Rs.1,234.50, using
+         Intl.NumberFormat with the en-IN locale).
+  [DONE] Form validation - no negative amounts, no future dates, category
+         required. Validated on BOTH the client and the server.
+
+NICE TO HAVE / BONUS (all implemented)
+  [DONE] Export visible expenses as a CSV download.
+  [DONE] A per-category budget setting with a visual progress bar that turns
+         red when spending exceeds the budget.
+  [DONE] Persistence to a JSON file (server/src/data/db.json) so data survives
+         server restarts.
+  [DONE] Backend tests with Vitest + Supertest (create, validation, update,
+         delete flows).
+
+--------------------------------------------------------------------------------
+3. TECH STACK
+--------------------------------------------------------------------------------
+Frontend:
+  - React 19 + Vite (functional components and hooks only, no class components)
+  - Plain CSS (custom, responsive, mobile-friendly)
+  - Recharts (category bar chart)
+  - Lucide React (icons)
+
+Backend:
+  - Node.js + Express 5 (REST API)
+  - JSON file storage (no external database required)
+  - Vitest + Supertest (API tests)
+
+Tooling:
+  - npm workspaces (single install for both client and server)
+  - concurrently (run client and server together in dev)
+  - nodemon (server auto-reload in dev)
+
+--------------------------------------------------------------------------------
+4. API ENDPOINTS (backend runs on http://localhost:5000)
+--------------------------------------------------------------------------------
+  GET    /api/health                 Health check -> { "status": "ok" }
+  GET    /api/categories             List of supported categories
+  GET    /api/expenses               List expenses (supports category, range,
+                                      startDate, endDate query params)
+  POST   /api/expenses               Create an expense
+  PUT    /api/expenses/:id           Update an expense
+  DELETE /api/expenses/:id           Delete an expense
+  GET    /api/summary                Aggregated summary (same filters as list)
+  GET    /api/budgets                Current per-category budgets
+  PUT    /api/budgets/:category      Update one category budget
+
+Categories: Food, Transport, Bills, Entertainment, Shopping, Health, Other
+(Full request/response shapes are documented in README.md.)
+
+--------------------------------------------------------------------------------
+5. PROJECT STRUCTURE
+--------------------------------------------------------------------------------
+  .
+  |-- client/                  React + Vite frontend
+  |   |-- src/
+  |   |   |-- components/       UI components (form, table, filters, chart,
+  |   |   |                     summary cards, budget panel)
+  |   |   |-- utils/            currency/date formatters
+  |   |   |-- api.js            fetch wrapper for the backend
+  |   |   |-- App.jsx           main app state and layout
+  |   |   |-- main.jsx          React entry point
+  |   |   `-- styles.css        all styling
+  |   |-- index.html
+  |   |-- package.json
+  |   `-- vite.config.js        dev proxy /api -> :5000, build chunks
+  |-- server/                  Node.js + Express backend
+  |   |-- src/
+  |   |   |-- data/db.json      persisted expenses + budgets
+  |   |   |-- store/fileStore.js  read/write JSON storage
+  |   |   |-- utils/            date, filters, summary, validation
+  |   |   |-- app.js            express app + routes
+  |   |   |-- constants.js      categories + default budgets
+  |   |   `-- server.js         server bootstrap
+  |   |-- tests/expenses.test.js  API tests
+  |   `-- package.json
+  |-- package.json             workspace root scripts
+  |-- README.md                full documentation
+  `-- PROJECT_DESCRIPTION.txt  this file
+
+--------------------------------------------------------------------------------
+6. HOW TO RUN LOCALLY (assumes only Node.js is installed)
+--------------------------------------------------------------------------------
+  1. Install dependencies (from the project root):
+         npm install
+
+  2. Start both frontend and backend together:
+         npm run dev
+
+  3. Open in the browser:
+         Frontend:           http://localhost:5173
+         Backend health:     http://localhost:5000/api/health
+
+  4. Run backend tests:
+         npm test
+
+  5. Build the frontend for production:
+         npm run build
+
+--------------------------------------------------------------------------------
+7. STATUS
+--------------------------------------------------------------------------------
+  - Backend tests: 3 passed (create, validation, update+delete).
+  - Frontend production build: succeeds with no errors.
+  - All Must-Have, Should-Have, and Bonus requirements are implemented.
+  - Not yet deployed. See README.md "Manual Submission Process" for the exact
+    GitHub + deployment steps.
+================================================================================

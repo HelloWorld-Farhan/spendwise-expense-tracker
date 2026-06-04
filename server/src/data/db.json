@@ -1,0 +1,58 @@
+{
+  "expenses": [
+    {
+      "id": "exp_101",
+      "amount": 1240.5,
+      "category": "Food",
+      "date": "2026-06-01",
+      "note": "Weekly groceries heelo",
+      "createdAt": "2026-06-01T10:15:00.000Z",
+      "updatedAt": "2026-06-04T16:14:03.468Z"
+    },
+    {
+      "id": "exp_102",
+      "amount": 850,
+      "category": "Transport",
+      "date": "2026-05-30",
+      "note": "Cab to office",
+      "createdAt": "2026-05-30T08:10:00.000Z",
+      "updatedAt": "2026-05-30T08:10:00.000Z"
+    },
+    {
+      "id": "exp_103",
+      "amount": 2450,
+      "category": "Bills",
+      "date": "2026-05-28",
+      "note": "Internet bill",
+      "createdAt": "2026-05-28T13:30:00.000Z",
+      "updatedAt": "2026-05-28T13:30:00.000Z"
+    },
+    {
+      "id": "exp_104",
+      "amount": 690,
+      "category": "Entertainment",
+      "date": "2026-05-24",
+      "note": "Movie night",
+      "createdAt": "2026-05-24T18:05:00.000Z",
+      "updatedAt": "2026-05-24T18:05:00.000Z"
+    },
+    {
+      "id": "5c33f8a5-d11e-4eea-b2d2-0b8c11a70882",
+      "amount": 360,
+      "category": "Health",
+      "date": "2026-06-02",
+      "note": "Pharmacy basics",
+      "createdAt": "2026-06-02T09:55:58.110Z",
+      "updatedAt": "2026-06-02T09:55:58.110Z"
+    }
+  ],
+  "budgets": {
+    "Food": 12000,
+    "Transport": 6000,
+    "Bills": 18000,
+    "Entertainment": 5000,
+    "Shopping": 8000,
+    "Health": 4000,
+    "Other": 3000
+  }
+}
